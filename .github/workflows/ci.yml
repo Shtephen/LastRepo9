@@ -18,7 +18,7 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: '8.0.x' 
+          dotnet-version: '6.0.x'
 
       - name: Restore dependencies
         run: dotnet restore SimpleCalculator.sln
@@ -26,7 +26,7 @@ jobs:
       - name: Build
         run: dotnet build --configuration Release SimpleCalculator.sln
 
-  test:
+  test_debug:
     runs-on: ubuntu-latest
     needs: build
     steps:
@@ -36,10 +36,28 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: '8.0.x'
+          dotnet-version: '6.0.x'
 
       - name: Restore dependencies
         run: dotnet restore SimpleCalculator.sln
 
-      - name: Run tests
+      - name: Run tests in Debug configuration
+        run: dotnet test --configuration Debug SimpleCalculator.sln
+
+  test_release:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '6.0.x'
+
+      - name: Restore dependencies
+        run: dotnet restore SimpleCalculator.sln
+
+      - name: Run tests in Release configuration
         run: dotnet test --configuration Release SimpleCalculator.sln
