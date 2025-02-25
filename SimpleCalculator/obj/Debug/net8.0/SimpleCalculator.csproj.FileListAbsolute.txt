@@ -1,0 +1,14 @@
+C:\Users\Stephen\Desktop\ИСРПО\Лабораторная работа 9\SimpleCalculator\SimpleCalculator\bin\Debug\net8.0\SimpleCalculator.exe
+C:\Users\Stephen\Desktop\ИСРПО\Лабораторная работа 9\SimpleCalculator\SimpleCalculator\bin\Debug\net8.0\SimpleCalculator.deps.json
+C:\Users\Stephen\Desktop\ИСРПО\Лабораторная работа 9\SimpleCalculator\SimpleCalculator\bin\Debug\net8.0\SimpleCalculator.runtimeconfig.json
+C:\Users\Stephen\Desktop\ИСРПО\Лабораторная работа 9\SimpleCalculator\SimpleCalculator\bin\Debug\net8.0\SimpleCalculator.dll
+C:\Users\Stephen\Desktop\ИСРПО\Лабораторная работа 9\SimpleCalculator\SimpleCalculator\bin\Debug\net8.0\SimpleCalculator.pdb
+C:\Users\Stephen\Desktop\ИСРПО\Лабораторная работа 9\SimpleCalculator\SimpleCalculator\obj\Debug\net8.0\SimpleCalculator.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Stephen\Desktop\ИСРПО\Лабораторная работа 9\SimpleCalculator\SimpleCalculator\obj\Debug\net8.0\SimpleCalculator.AssemblyInfoInputs.cache
+C:\Users\Stephen\Desktop\ИСРПО\Лабораторная работа 9\SimpleCalculator\SimpleCalculator\obj\Debug\net8.0\SimpleCalculator.AssemblyInfo.cs
+C:\Users\Stephen\Desktop\ИСРПО\Лабораторная работа 9\SimpleCalculator\SimpleCalculator\obj\Debug\net8.0\SimpleCalculator.csproj.CoreCompileInputs.cache
+C:\Users\Stephen\Desktop\ИСРПО\Лабораторная работа 9\SimpleCalculator\SimpleCalculator\obj\Debug\net8.0\SimpleCalculator.dll
+C:\Users\Stephen\Desktop\ИСРПО\Лабораторная работа 9\SimpleCalculator\SimpleCalculator\obj\Debug\net8.0\refint\SimpleCalculator.dll
+C:\Users\Stephen\Desktop\ИСРПО\Лабораторная работа 9\SimpleCalculator\SimpleCalculator\obj\Debug\net8.0\SimpleCalculator.pdb
+C:\Users\Stephen\Desktop\ИСРПО\Лабораторная работа 9\SimpleCalculator\SimpleCalculator\obj\Debug\net8.0\SimpleCalculator.genruntimeconfig.cache
+C:\Users\Stephen\Desktop\ИСРПО\Лабораторная работа 9\SimpleCalculator\SimpleCalculator\obj\Debug\net8.0\ref\SimpleCalculator.dll
