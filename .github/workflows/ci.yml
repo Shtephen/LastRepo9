@@ -59,11 +59,20 @@ jobs:
         with:
           dotnet-version: '8.0.x'
 
+      - name: Install SonarScanner
+        run: dotnet tool install --global dotnet-sonarscanner
+
+      - name: Add .NET tools to PATH
+        run: echo "$(dotnet tool path --global)" >> $GITHUB_PATH
+      
       - name: Run static code analysis
         run: dotnet sonarscanner begin /k:"your_project_key" -d:sonar.host.url="https://sonarcloud.io" -d:sonar.login="$SONAR_TOKEN"
+      
       - name: Build
-        run: dotnet build
+        run: dotnet build SimpleCalculator.sln
+
       - name: Run tests
-        run: dotnet test
+        run: dotnet test SimpleCalculator.sln
+
       - name: End analysis
         run: dotnet sonarscanner end -d:sonar.login="$SONAR_TOKEN"
