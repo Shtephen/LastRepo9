@@ -26,9 +26,12 @@ jobs:
       - name: Build
         run: dotnet build --configuration Release SimpleCalculator.sln
 
-  test_debug:
+  test:
     runs-on: ubuntu-latest
     needs: build
+    strategy:
+      matrix:
+        configuration: [Debug, Release]
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -41,10 +44,10 @@ jobs:
       - name: Restore dependencies
         run: dotnet restore SimpleCalculator.sln
 
-      - name: Run tests in Debug configuration
-        run: dotnet test --configuration Debug SimpleCalculator.sln
+      - name: Run tests
+        run: dotnet test --configuration ${{ matrix.configuration }} SimpleCalculator.sln
 
-  test_release:
+  analyze:
     runs-on: ubuntu-latest
     needs: build
     steps:
@@ -56,8 +59,11 @@ jobs:
         with:
           dotnet-version: '8.0.x'
 
-      - name: Restore dependencies
-        run: dotnet restore SimpleCalculator.sln
-
-      - name: Run tests in Release configuration
-        run: dotnet test --configuration Release SimpleCalculator.sln
+      - name: Run static code analysis
+        run: dotnet sonarscanner begin /k:"your_project_key" -d:sonar.host.url="https://sonarcloud.io" -d:sonar.login="$SONAR_TOKEN"
+      - name: Build
+        run: dotnet build
+      - name: Run tests
+        run: dotnet test
+      - name: End analysis
+        run: dotnet sonarscanner end -d:sonar.login="$SONAR_TOKEN"
