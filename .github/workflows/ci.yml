@@ -21,10 +21,10 @@ jobs:
           dotnet-version: '8.0.x'  
 
       - name: Restore dependencies
-        run: dotnet restore "C:\Users\Stephen\Desktop\ИСРПО\Лабораторная работа 9\SimpleCalculator\SimpleCalculator.sln"
+        run: dotnet restore "SimpleCalculator/SimpleCalculator.sln"
 
       - name: Build
-        run: dotnet build --configuration Release "C:\Users\Stephen\Desktop\ИСРПО\Лабораторная работа 9\SimpleCalculator\SimpleCalculator.sln"
+        run: dotnet build --configuration Release "SimpleCalculator/SimpleCalculator.sln"
 
   test:
     runs-on: ubuntu-latest
@@ -42,7 +42,7 @@ jobs:
           dotnet-version: '8.0.x'
 
       - name: Restore dependencies
-        run: dotnet restore "C:\Users\Stephen\Desktop\ИСРПО\Лабораторная работа 9\SimpleCalculator\SimpleCalculator.sln"
+        run: dotnet restore "SimpleCalculator/SimpleCalculator.sln"
 
       - name: Run tests
-        run: dotnet test --configuration ${{ matrix.configuration }} "C:\Users\Stephen\Desktop\ИСРПО\Лабораторная работа 9\SimpleCalculator\SimpleCalculator.Tests\SimpleCalculator.Tests.csproj"
+        run: dotnet test --configuration ${{ matrix.configuration }} "SimpleCalculator/SimpleCalculator.Tests/SimpleCalculator.Tests.csproj"
