@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '8.0.x'  # Замените на нужную версию .NET
+
+      - name: Restore dependencies
+        run: dotnet restore "C:\Users\Stephen\Desktop\ИСРПО\Лабораторная работа 9\SimpleCalculator\SimpleCalculator.sln"
+
+      - name: Build
+        run: dotnet build --configuration Release "C:\Users\Stephen\Desktop\ИСРПО\Лабораторная работа 9\SimpleCalculator\SimpleCalculator.sln"
+
+  test:
+    runs-on: ubuntu-latest
+    needs: build
+    strategy:
+      matrix:
+        configuration: [Debug, Release]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore dependencies
+        run: dotnet restore "C:\Users\Stephen\Desktop\ИСРПО\Лабораторная работа 9\SimpleCalculator\SimpleCalculator.sln"
+
+      - name: Run tests
+        run: dotnet test --configuration ${{ matrix.configuration }} "C:\Users\Stephen\Desktop\ИСРПО\Лабораторная работа 9\SimpleCalculator\SimpleCalculator.Tests\SimpleCalculator.Tests.csproj"
