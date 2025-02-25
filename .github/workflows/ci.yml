@@ -18,7 +18,7 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: '8.0.x'  # Замените на нужную версию .NET
+          dotnet-version: '8.0.x'  
 
       - name: Restore dependencies
         run: dotnet restore "C:\Users\Stephen\Desktop\ИСРПО\Лабораторная работа 9\SimpleCalculator\SimpleCalculator.sln"
