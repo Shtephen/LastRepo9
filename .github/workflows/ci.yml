@@ -18,7 +18,13 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: '8.0.x'  
+          dotnet-version: '8.0.x'
+
+      - name: Print working directory
+        run: pwd
+
+      - name: List files
+        run: ls -R
 
       - name: Restore dependencies
         run: dotnet restore "SimpleCalculator/SimpleCalculator.sln"
@@ -40,6 +46,12 @@ jobs:
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: '8.0.x'
+          
+      - name: Print working directory
+        run: pwd
+        
+      - name: List files
+        run: ls -R
 
       - name: Restore dependencies
         run: dotnet restore "SimpleCalculator/SimpleCalculator.sln"
